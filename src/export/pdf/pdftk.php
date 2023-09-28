@@ -99,8 +99,10 @@
 		if(file_exists("$dircmd/$cmd")) {
 		
 			$pdf_out=FPDM_CACHE."pdf_flatten.pdf";
+
+			$self_dir_cmd = str_replace(' ', '\\ ', $dircmd);
 			
-			$cmdline="$dircmd/$cmd \"$pdf_file\" fill_form \"$fdf_file\" output \"$pdf_out\" $output_modes $security"; //direct to ouptut	
+			$cmdline="$self_dir_cmd/$cmd \"$pdf_file\" fill_form \"$fdf_file\" output \"$pdf_out\" $output_modes $security"; //direct to ouptut	
 
 			//echo htmlentities("$cmdline , $descriptorspec, $cwd, $env");
 
